@@ -1,16 +1,19 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from typing import Union
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+class Glass:
+    def __init__(self, material: Union[str]):
+        self.material = self.get_material(material)
+
+    def get_material(self, material):
+        material = input()
+        return self.material
+
+    def __str__(self):
+        return f"Материал, из которого сделан стакан: {self.material}"
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+if __name__ == "__main__":
+    glass = Glass()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    print(glass)
